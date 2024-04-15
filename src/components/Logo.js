@@ -2,7 +2,7 @@
 
 function Logo() {
     return(
-        <h1>MACRONEWTS</h1>
+        <h1 className="logo-text"><span>MACRO</span>NEWTS</h1>
     )
 }
 

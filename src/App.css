@@ -18,6 +18,15 @@
   margin: auto;
 }
 
+.logo-text {
+  color: rgb(163, 250, 34);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 3% 3%;
+}
+.logo-text span {
+  color: #ee5b73;
+}
+
 .form-container {
 
   justify-content: center;

@@ -1,12 +1,12 @@
 import './App.css';
-import LeftPanel from './components/LeftPanel';
-import RightPanel from './components/RightPanel';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
 
 function App() {
   return (
     <div className='app-container'>
-      <LeftPanel />
-      <RightPanel />
+      {/* <LoginPage /> */}
+      <SignUpPage />
     </div>
 
   )
