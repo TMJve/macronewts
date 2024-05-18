@@ -1,6 +1,11 @@
+// import { Link } from "react-router-dom";
+import PageNav from "../components/PageNav";
 function Forum() {
     return (
-        <h1>Forum</h1>
+        <nav>
+            <PageNav />
+        </nav>
+   
     )
 }
 

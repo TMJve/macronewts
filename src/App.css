@@ -18,6 +18,16 @@
   margin: auto;
 }
 
+.rightSignInPanel {
+  background-color: rgb(248, 193, 248);
+  width: 50%;
+  height: 100vh;
+}
+
+.leftSignInPanel {
+  margin: auto;
+}
+
 .logo-text {
   color: rgb(163, 250, 34);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -26,6 +36,9 @@
 .logo-text span {
   color: #ee5b73;
 }
+
+
+
 
 .form-container {
 
@@ -84,11 +97,76 @@
   color: rgb(136, 135, 135);
 }
 
-.sign-up-text a {
+.sign-up-text .signup-text-link {
   text-decoration: none;
   color: rgb(69, 104, 202);
 }
 
-.sign-up-text a:hover {
+.sign-up-text .signup-text-link:hover {
   color: rgb(90, 123, 212);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  height: 50px; /* Increased height for better alignment */
+  padding: 0 20px; /* Added padding for spacing inside navbar */
+  
+  box-shadow: 0 4px 2px -2px rgb(158, 158, 158);
+}
+
+.nav-logo h1 {
+  font-size: 30px;
+  color: #ee5b73;
+}
+
+.nav-items {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  
+}
+
+.addButton {
+  
+  background-color: #ee5b73;
+  border-color: #e94560;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+}
+
+.addButton a {
+  color: white;
+  text-decoration: none;
+}
+
+/* search bar  css*/
+
+.input-box {
+  /* width: 200px;
+  height: 30px; */
+  /* background-color: red; */
+}
+
+.search-style {
+  width: 400px;
+  height: 29px;
+  border-radius: 5px;
+  border-color: rgb(160, 161, 161);
+  padding: 0 10px;
 }

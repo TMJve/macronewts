@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function LoginForm() {
     return (
         <div className="form-container">
@@ -24,7 +26,7 @@ function LoginForm() {
 
             <p className="sign-up-text">
                 Haven’t got an account yet?   
-                <a href="#">Sign up</a>
+                <Link to='/signup' className="signup-text-link">Sign up</Link>
             </p>
             
            
