@@ -3,6 +3,36 @@
   padding: 0;
 }
 
+body {
+  /* background-color: #F5FFF6; */
+}
+
+/* button css */
+
+.the-button {
+  padding: 10px 13px;
+  border: 1px solid #f3415e;
+  background-color: #ee5b73;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.the-button:hover {
+  background-color: white;
+  color: #e94560;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 10px;
+}
+
+
 .app-container {
   display: flex;
 }
@@ -114,7 +144,7 @@
   height: 50px; /* Increased height for better alignment */
   padding: 0 20px; /* Added padding for spacing inside navbar */
   
-  box-shadow: 0 4px 2px -2px rgb(158, 158, 158);
+  box-shadow: 0 4px 2px -2px rgb(143, 143, 143);
 }
 
 .nav-logo h1 {
@@ -137,7 +167,8 @@
 
 .nav-link {
   text-decoration: none;
-  
+  color: #ee5b73;
+  font-weight: bolder;
 }
 
 .addButton {
@@ -169,4 +200,80 @@
   border-radius: 5px;
   border-color: rgb(160, 161, 161);
   padding: 0 10px;
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+}
+
+.featured-recipes {
+  /* background-color: aqua; */
+  height: 270px;
+  width: 100%;
+  padding: 1.5% 3%;
+}
+
+.featured-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.featured-text h2 {
+  margin: 0;
+  padding-right: 1rem;
+  color: #535353;
+}
+
+.featured-text hr {
+  flex-grow: 1;
+  border: none;
+  margin: 0;
+  border-top: 1px solid #adadad;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  /* background-color: red; */
+  margin-left: 1%;
+}
+
+.carousel-container li {
+  margin-right: 20px;
+}
+
+/* minicard css */
+
+.minicard-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feed-text {
+  display: flex;
+  align-items: center;
+  /* margin-top: 30px; */
+  margin: 20px 0;
+}
+
+.feed-text h1 {
+  color: #464646;
+}
+
+.feed-text hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #adadad;
+  margin: 0 60px;
 }
