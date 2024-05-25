@@ -4,7 +4,7 @@ import SearchBar from './SearchBar'
 
 export default function PageNav() {
   return (
-    <nav className='navbar'>
+    <nav className='navbar sticky'>
       <div className='nav-logo'>
         <h1>
           MacroNewts

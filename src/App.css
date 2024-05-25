@@ -5,6 +5,7 @@
 
 body {
   /* background-color: #F5FFF6; */
+  overflow-x: hidden;
 }
 
 /* button css */
@@ -203,6 +204,7 @@ body {
 }
 
 .centered-content {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -277,3 +279,71 @@ body {
   border-top: 1px solid #adadad;
   margin: 0 60px;
 }
+
+/* forum container */
+
+.main-forum-container {
+  width: 100%;
+  height: 650px;
+  background-color: #d42121;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  /* overflow-x: hidden; */
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.left-panel, .middle-panel, .right-panel {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.friend-panel {
+  background-color: #adadad;
+  width: 300px;
+  height: 600px;
+  /* padding-left: 0px; */
+}
+
+.forum-panel {
+  background-color: #adadad;
+  overflow: hidden;
+  transition: overflow 0.3s ease;
+  width: 900px;
+  height: 400px;
+
+}
+
+.forum-panel:hover {
+  overflow: auto;
+}
+
+.news-panel {
+  background-color: #adadad;
+  width: 300px;
+  height: 400px;
+}
+
+/* friend rec component */
+
+.friend-rec-container {
+  width: 250px;
+  height: 600px;
+  margin-left: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(243, 62, 62);
+  border-radius: 5px;
+}
+
+.friends-rec-text {
+  margin: 10px 0 0px 65px;
+  font-size: 20px;
+
+}
+
+

@@ -2,6 +2,7 @@
 import PageNav from "../components/PageNav";
 import Carousel from "../components/Carousel";
 import Button from "../components/Button";
+import FriendRecs from "../components/FriendRecs";
 function Forum() {
     return (
         <>
@@ -9,7 +10,7 @@ function Forum() {
                 <PageNav />
             </nav>
             <div className="centered-content">
-                <body className="featured-recipes">
+                <div className="featured-recipes">
                     <div className="featured-text">
                         <h2>Featured Recipes</h2>
                         <hr />
@@ -24,7 +25,21 @@ function Forum() {
                         <h1>Feed</h1>
                         <hr />
                    </div>
-                </body>                
+                   <div className="main-forum-container">
+                        <div className="friend-panel">
+                            <FriendRecs />
+                        </div>
+                        <div className="forum-panel">
+
+                        </div>
+                        <div className="news-panel">
+                     
+                        </div>
+                        {/* Friend Reccomendations */}
+                        {/* Forum */}
+                        {/* news panel */}
+                   </div>
+                </div>                
             </div>
 
         </>
