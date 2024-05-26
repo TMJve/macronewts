@@ -20,6 +20,7 @@ export default function PageNav() {
         </li>
         <li className='nav-item'>
           <button className='nav-link addButton'><a href='#'>+</a></button>
+          <image></image>
         </li>
       </ul>
     </nav>
