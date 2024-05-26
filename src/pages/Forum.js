@@ -29,9 +29,11 @@ function Forum() {
                         <div className="friend-panel">
                             <FriendRecs />
                         </div>
+                        <hr/>
                         <div className="forum-panel">
 
                         </div>
+                        <hr/>
                         <div className="news-panel">
                      
                         </div>

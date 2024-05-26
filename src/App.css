@@ -8,6 +8,11 @@ body {
   overflow-x: hidden;
 }
 
+hr {
+  /* background-color: #e94560; */
+  border-color: #ffffff;
+}
+
 /* button css */
 
 .the-button {
@@ -285,7 +290,7 @@ body {
 .main-forum-container {
   width: 100%;
   height: 650px;
-  background-color: #d42121;
+  /* background-color: #d42121; */
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
@@ -304,7 +309,7 @@ body {
 }
 
 .friend-panel {
-  background-color: #adadad;
+  /* background-color: #adadad; */
   width: 300px;
   height: 600px;
   /* padding-left: 0px; */
@@ -336,14 +341,47 @@ body {
   height: 600px;
   margin-left: 20px;
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(243, 62, 62);
+  border: 1px solid rgb(161, 161, 161);
   border-radius: 5px;
 }
 
 .friends-rec-text {
-  margin: 10px 0 0px 65px;
+  margin: 10px 0 16px 60px;
   font-size: 20px;
+  color: #e94560;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.friend-card-container {
+  
+  height: 60px;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 3px;
+  margin: auto;
+  margin-bottom: 5px;
+  padding: 5px 8px;
+}
+
+/* friend card css */
+
+.add-friend-button {
+  color: white;
+  border-color: #f87a8f;
+  padding: 3px 7px;
+  background-color: #e94560;
+  border: 1px solid;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.add-friend-button:hover {
+  color: #e94560;
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
