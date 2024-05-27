@@ -5,15 +5,15 @@ const app = express();
 const PORT = 3000;
 
 //MONGODB
-const {MongoClient, ServerApiVersion} = require('mongodb');
+// const {MongoClient, ServerApiVersion} = require('mongodb');
 const uri = "mongodb+srv://rampart:rampart@macronewts.br71kma.mongodb.net/?retryWrites=true&w=majority&appName=MacroNewts";
-const client = new MongoClient(uri, {
-    serverApi: {
-        version: ServerApiVersion.v1,
-        strict:true,
-        deprecationErrors: true,
-    }
-});
+// const client = new MongoClient(uri, {
+//     serverApi: {
+//         version: ServerApiVersion.v1,
+//         strict:true,
+//         deprecationErrors: true,
+//     }
+// });
 
 //Middleware
 app.use(cors());
@@ -21,13 +21,20 @@ app.use(express.json());
 
 //MONGODB CONN
 
-mongoose.connect('')
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Connected to MongoDB");
+}).catch((err) => {
+    console.error(err);
+})
 
 
 //Routes
 
 app.get('/', (req,res) => {
-
+    res.sendFile("./src/pages/Forum.js", {root: __dirname} );
 })
 
 app.listen(PORT, () => {
