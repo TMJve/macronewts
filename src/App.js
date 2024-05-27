@@ -6,7 +6,7 @@ import Recipes from './pages/Recipes';
 import Forum from './pages/Forum';
 import PageNotFound from './pages/PageNotFound';
 import Profile from './pages/Profile';
-import EditProfile from './pages/editProfile';
+import EditProfile from './pages/EditProfile';
 
 function App() {
   return (
