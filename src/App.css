@@ -381,7 +381,85 @@ hr {
 .add-friend-button:hover {
   color: #e94560;
   background-color: rgb(255, 255, 255);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color
+   0.3s ease, color 0.3s ease;
 }
+
+
+/* CSS MENU PAGE */
+/* menu recipe page  */
+.headerrecipe {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 95%;
+  height: 50px;
+  margin-left: 2%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.content-recipe {
+  position: relative;
+  top: 75px; /* Adjust this value to match the height of your header */
+}
+
+.food-menu {
+  margin-top: 10px;
+}
+
+.addRecipee {
+  margin-top: 6px;
+}
+
+.add-menu-btn {
+  padding: 10px 20px; /* Padding inside the button */
+  border: 1px solid #f3415e;
+  background-color: #ee5b73;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* margin-top: -35px; Adjust margin if needed */
+  /* margin-bottom: 50px; Adjust margin if needed */
+}
+
+.menu-card {
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  text-align: center;
+}
+
+.menu-container {
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 1%;
+}
+
+.ulmenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.imagephoto {
+  width: 250px;
+  height: 250px;
+}
+
+.menuname {
+  margin: auto;
+}
+/* END MENU PAGE */
 
 
