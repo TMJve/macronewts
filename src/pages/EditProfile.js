@@ -22,9 +22,9 @@ function EditProfile(){
     }
 
     const handleSubmit = (event) =>{
-        formData.append('profilePicture', profilePicture);
-        formData.append('name', name);
-        formData.append('description', description);
+        // formData.append('profilePicture', profilePicture);
+        // formData.append('name', name);
+        // formData.append('description', description);
     }
 
     return(

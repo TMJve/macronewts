@@ -5,7 +5,7 @@ const ProfilePicture = ({picture}) =>{
     return(
         <div className="profile-img">
             <img 
-                src={typeof picture === 'string' ? picture : URL.createObjectURL(picture)}
+                src={defaultProfile}
                 alt={defaultProfile}
                 width="100%"
                 height="100%"
