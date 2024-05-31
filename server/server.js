@@ -1,42 +1,34 @@
-const express = require("express");
-const mongoose = require("mongoose")
-const cors = require("cors");
-const app = express();
-const PORT = 3000;
+require('dotenv').config();
 
-//MONGODB
-// const {MongoClient, ServerApiVersion} = require('mongodb');
-const uri = "mongodb+srv://rampart:rampart@macronewts.br71kma.mongodb.net/?retryWrites=true&w=majority&appName=MacroNewts";
-// const client = new MongoClient(uri, {
-//     serverApi: {
-//         version: ServerApiVersion.v1,
-//         strict:true,
-//         deprecationErrors: true,
-//     }
-// });
+// Initialize package
+const express = require('express')
+const mongoose = require('mongoose')
+const userRoutes = require('./routes/user')
 
-//Middleware
-app.use(cors());
-app.use(express.json());
+// Express app
+const app = express()
 
-//MONGODB CONN
-
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log("Connected to MongoDB");
-}).catch((err) => {
-    console.error(err);
+// Middleware
+app.use(express.json())
+app.use((req, res, next) =>{
+    console.log(req.path, req.method)
+    next()
 })
 
+// Routes
+app.use('/api/user', userRoutes)
 
-//Routes
+// Connect to db
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        // Listening on port 4000
+        app.listen(process.env.PORT, () =>{
+            console.log('Listening on port 4000')
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
 
-app.get('/', (req,res) => {
-    res.sendFile("./src/pages/Forum.js", {root: __dirname} );
-})
 
-app.listen(PORT, () => {
-    console.log('Server is running');  
-})
+process.env
