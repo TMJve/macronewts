@@ -2,13 +2,23 @@ import PageNav from "../components/PageNav";
 import React, { useState } from 'react';
 import defaultProfile from "../photos/default-profile.jpg";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function Profile() {
-    const [profilePicture, setProfilePicture] = useState(defaultProfile);
+    const [users, setUsers] = useState(null)
 
-    const handleProfilePicChange = (event) =>{
-        setProfilePicture(event.target.files[0]);
-    };
+    useEffect(() => {
+        const fetchWorkouts = async () => {
+            const response = await fetch('/api/user')
+            const json = await response.json()
+
+            if (response.ok) {
+                setUsers(json)
+            }
+        }
+
+        fetchWorkouts()
+    }, [])
 
     return(
         <>
@@ -21,20 +31,22 @@ function Profile() {
                     <div className="profile-box">
                         <ul className="profile">
                             <li>
-                                <profilePicture
+                                {/* <profilePicture
                                     picture={profilePicture}
-                                />
+                                /> */}
                             </li>
                             <li className="profile-txt">
                                 <div className="profile-name">
-                                    <h1>John Doe</h1>
+                                {users && users.map((user) => (
+                                    <h1 key={user._id}>{user.name}</h1>
+                                ))}
                                     
                                 </div>
                                 <hr />
                                 <div className="profile-desc">
-                                    <h3>
-                                        lorem ipsum
-                                    </h3>
+                                {users && users.map((user) => (
+                                    <h3 key={user._id}>{user.description}</h3>
+                                ))}
                                 </div>  
                             </li>
                             <li className="profile-edit">
