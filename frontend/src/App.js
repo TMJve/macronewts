@@ -7,6 +7,8 @@ import Forum from './pages/Forum';
 import PageNotFound from './pages/PageNotFound';
 import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
+import RecipePage from './pages/RecipePage';
+
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path='profile' element={<Profile />}/>
         <Route path='editprofile' element={<EditProfile/>}/>
         <Route path='*' element={<PageNotFound />}/>
+        <Route path='menurecipe' element={<RecipePage />}/>
+
       </Routes>
     </BrowserRouter>
   )
