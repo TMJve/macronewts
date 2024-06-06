@@ -75,11 +75,29 @@ const updateUser = async (req, res) =>{
     res.status(200).json(user)
 }
 
+const signUpUser = async(req, res) => {
+    const {email, password} = req.body;
+
+    const existingUser = await User.findOne({email});
+    if(existingUser) {
+        return res.status(400).json({ error: 'User already exists.'});
+    }
+
+    try {
+        const user = await User.create({email, password});
+    }catch(err) {
+        res.status(400).json({error: error.message});
+    }
+};
+
+
+
 // Export function
 module.exports = {
     getUsers,
     getUser,
     createUser,
     deleteUser,
-    updateUser
+    updateUser,
+    signUpUser
 }
