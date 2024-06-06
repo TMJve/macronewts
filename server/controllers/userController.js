@@ -88,7 +88,7 @@ const signUpUser = async(req, res) => {
         console.log('User created successfully', user);
         res.status(201).json(user);
     }catch(err) {
-        res.status(400).json({error: error.message});
+        res.status(400).json({error: err.message});
     }
 };
 

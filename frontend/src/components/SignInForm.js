@@ -9,7 +9,7 @@ function SignInForm() {
 
     const handleSubmit = async(e) => {
         // e.preventdefault();
-        if(password != confirmPassword) {
+        if(password !== confirmPassword) {
             setError("Password does not match");
             return;
         }
