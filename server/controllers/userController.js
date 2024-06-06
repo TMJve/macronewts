@@ -85,6 +85,8 @@ const signUpUser = async(req, res) => {
 
     try {
         const user = await User.create({email, password});
+        console.log('User created successfully', user);
+        res.status(201).json(user);
     }catch(err) {
         res.status(400).json({error: error.message});
     }
