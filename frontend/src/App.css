@@ -18,6 +18,20 @@ hr {
 }
 
 /* button css */
+.submit-button {
+  border: 1px solid rgb(103, 214, 103);
+  padding: 10px 15px;
+  background-color: rgb(103, 214, 103);
+  color: white;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.submit-button:hover {
+  background-color: white;
+  color: rgb(103, 214, 103);
+  border: 1px solid rgb(103, 214, 103);
+
+}
 
 .the-button {
   padding: 10px 13px;
@@ -81,7 +95,7 @@ hr {
 
 
 .form-container {
-
+  
   justify-content: center;
 }
 

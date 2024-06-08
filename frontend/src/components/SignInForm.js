@@ -8,14 +8,14 @@ function SignInForm() {
     const [error, setError] = useState('');
 
     const handleSubmit = async(e) => {
-        // e.preventdefault();
+        e.preventDefault();
         if(password !== confirmPassword) {
             setError("Password does not match");
             return;
         }
         setError('');
 
-        const response = await fetch('/api/users/signup', {
+        const response = await fetch('http://localhost:4000/api/user/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/JSON',
@@ -62,9 +62,9 @@ function SignInForm() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                <button type='submit'>Sign Up</button>
+                <button className='submit-button' type='submit'>Sign Up</button>
             </form>
-            { error && <p>Password does not match!</p>}
+            { error && <p>{error}</p>}
         </div>
     )
 }
