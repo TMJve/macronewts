@@ -310,6 +310,7 @@ hr {
   height: 650px;
   /* background-color: #d42121; */
   display: flex;
+  /* flex-direction: column; */
   justify-content: space-around;
   margin-top: 30px;
   /* overflow-x: hidden; */
@@ -328,6 +329,7 @@ hr {
 
 .friend-panel {
   /* background-color: #adadad; */
+  display: flex;
   width: 300px;
   height: 600px;
   /* padding-left: 0px; */
@@ -335,11 +337,26 @@ hr {
 
 .forum-panel {
   background-color: #adadad;
-  overflow: hidden;
-  transition: overflow 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* transition: overflow 0.3s ease; */
   width: 900px;
   height: 400px;
+  padding: 10px;
 
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.post {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .forum-panel:hover {

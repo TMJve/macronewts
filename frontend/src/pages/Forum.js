@@ -4,11 +4,43 @@ import Carousel from "../components/Carousel";
 import Button from "../components/Button";
 import FriendRecs from "../components/FriendRecs";
 import Modal from "../components/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+
+const dummyPosts = [
+    {
+        _id: '1',
+        title: 'First Post',
+        content: 'This is the content of the first post.',
+    },
+    {
+        _id: '2',
+        title: 'Second Post',
+        content: 'This is the content of the second post.',
+    },
+    {
+        _id: '3',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+];
+
 
 function Forum() {
 
+    const [posts, setPosts] = useState(dummyPosts);
     const [showModal, setShowModal] = useState('false');
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const response = await fetch('/api/posts');
+            const data = await response.json();
+            setPosts(data);
+        };
+        
+        fetchPosts();
+    }, []);
+
     const handleOpenModal = () => {
         setShowModal(true);
     }
@@ -17,12 +49,38 @@ function Forum() {
         setShowModal(false);
     }
 
-    const handleSubmitPost = (e) => {
-        const title = e.target.title.value;
-        const content = e.target.content.value;
-        console.log(title, content);
-        setShowModal(false);
+    const handleSubmitPost = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const postData = {
+            title: formData.get('title'),
+            content: formData.get('content'),
+        };
+
+        const response = await fetch('/api/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postData),
+        });
+
+        if(response.ok) {
+            const newPost = await response.json();
+            setPosts([newPost, ...posts]);
+            handleCloseModal();
+        } else {
+            console.error('Failed to create post');
+        }
+        // const title = e.target.title.value;
+        // const content = e.target.content.value;
+        // console.log(title, content);
+        // setShowModal(false);
     }
+
+
+
+
 
     return (
         <>
@@ -51,7 +109,14 @@ function Forum() {
                         </div>
                         <hr/>
                         <div className="forum-panel">
-
+                            <div className="posts-container">
+                                {posts.map((post) => (
+                                    <div key={post._id} className="post">
+                                        <h3>{post.title}</h3>
+                                        <p>{post.content}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                         <hr/>
                         <div className="news-panel">
