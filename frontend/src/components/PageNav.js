@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
 
-export default function PageNav() {
+export default function PageNav({onAddPost}) {
   return (
     <nav className='navbar sticky'>
       <div className='nav-logo'>
@@ -19,10 +19,10 @@ export default function PageNav() {
           <Link className='nav-link' to='/Recipes'>Recipes</Link>
         </li>
         <li className='nav-item'>
-          <button className='nav-link addButton'><a href='#'>+</a></button>
+          <button className='nav-link addButton' onClick={onAddPost}><a href='#'>+</a></button>
           
         </li>
       </ul>
     </nav>
-  )
+  );
 }
