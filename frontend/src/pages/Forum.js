@@ -23,6 +23,57 @@ const dummyPosts = [
         title: 'Third Post',
         content: 'This is the content of the third post.',
     },
+    {
+        _id: '4',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '5',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '6',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '7',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '8',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '9',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '10',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '11',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '12',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+    {
+        _id: '13',
+        title: 'Third Post',
+        content: 'This is the content of the third post.',
+    },
+
 ];
 
 
