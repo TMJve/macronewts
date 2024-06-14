@@ -83,23 +83,14 @@ const updateUser = async (req, res) =>{
 const signUpUser = async(req, res) => {
     const {email, password} = req.body;
 
-    const existingUser = await User.findOne({email});
-    if(existingUser) {
-        return res.status(400).json({ error: 'User already exists.'});
+
+    try{
+        const user = await User.signup(email, password)
+
+        res.status(200).json({email, user})
+    } catch(error){
+        res.status(400).json({error: error.message})
     }
-
-    try {
-        const user = await User.create({email, password});
-
-        // Create token
-        const token = createToken(user._id)
-
-        console.log('User created successfully', user);
-        res.status(200).json({email, token});
-    }catch(err) {
-        res.status(400).json({error: err.message});
-    }
-
 };
 
 const logInUser = async(req, res) => {
