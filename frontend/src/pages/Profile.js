@@ -1,29 +1,18 @@
 import PageNav from "../components/PageNav";
 import React, { useState } from 'react';
-import defaultProfile from "../photos/default-profile.jpg";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
+
 
 function Profile() {
     const { logout } = useLogout()
+    const { user } = useAuthContext()
+    console.log(user)
     const handleClick = () => {
         logout()
     }
-    const [users, setUsers] = useState(null)
-
-    useEffect(() => {
-        const fetchWorkouts = async () => {
-            const response = await fetch('/api/user')
-            const json = await response.json()
-
-            if (response.ok) {
-                setUsers(json)
-            }
-        }
-
-        fetchWorkouts()
-    }, [])
 
     return(
         <>
@@ -42,16 +31,15 @@ function Profile() {
                             </li>
                             <li className="profile-txt">
                                 <div className="profile-name">
-                                {users && users.map((user) => (
-                                    <h1 key={user._id}>{user.name}</h1>
-                                ))}
-                                    
+                                    {user && (
+                                        <h2>{user.email}</h2>
+                                    )}
+                                    {!user && (
+                                        <h1></h1>
+                                    )}
                                 </div>
                                 <hr />
                                 <div className="profile-desc">
-                                {users && users.map((user) => (
-                                    <h3 key={user._id}>{user.description}</h3>
-                                ))}
                                 </div>  
                             </li>
                             <li className="profile-edit">
