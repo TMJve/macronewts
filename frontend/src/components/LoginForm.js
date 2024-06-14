@@ -1,50 +1,32 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
-    const [email, setEmail] = useState('');
+    const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const navigate = useNavigate();
 
-    const handleLogin = async (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
-        console.log(email,password)
-    
-        // const loginData = {
-        //     email,
-        //     password,
-        // };
+        const response = await fetch('http://localhost:4000/api/user/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON',
+            },
+            body: JSON.stringify({email, password}),
+        });
 
-        // try {
-        //     const response = await fetch('http://localhost:4000/api/user/login', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify(loginData),
-        //     });
-
-        //     if (response.ok) {
-        //         const responseData = await response.json(); // Parse response data
-
-        //         if (responseData.success) {
-        //             setIsLoggedIn(true);
-        //             navigate('/index');
-        //         } else {
-        //             console.error('Login failed:', responseData.message);
-        //         }
-        //         } else {
-        //         console.error('Login request failed:', response.statusText);
-        //         }
-        //     } catch (error) {
-        //         console.error('Error during login:', error);
-        // }
-    }    
+        const data = await response.json();
+        if(response.ok) {
+            console.log('Sign Up Succesful', data);
+        } else {
+            console.error('Signup failed', data.error)
+        }
+    }
 
     return (
         <div className="form-container">
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSubmit}>
                 <span className="login-text">LOG IN</span>
                 <input 
                     className="userInput"

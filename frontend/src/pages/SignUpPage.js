@@ -5,8 +5,8 @@ import RightPanelSignIn from "../components/RightPanelSignIn";
 function SignUpPage() {
     return (
         <div className="app-container">
-           <LeftPanelSignIn />
-           <RightPanelSignIn />
+            <LeftPanelSignIn />
+            <RightPanelSignIn />
         </div>
     )
 }

@@ -1,38 +1,19 @@
 import React from 'react'
 import { useState } from 'react';
+import { useSignup } from '../hooks/useSignup';
 
 function SignInForm() {
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
+    const {signup, error, isLoading} = useSignup()
+
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        if(password !== confirmPassword) {
-            setError("Password does not match");
-            return;
-        }
-        setError('');
-
-        const response = await fetch('http://localhost:4000/api/user/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/JSON',
-            },
-            body: JSON.stringify({email, password}),
-        });
-
-        const data = await response.json();
-        if(response.ok) {
-            console.log('Sign Up Succesful', data);
-        } else {
-            console.error('Signup failed', data.error)
-        }
+        
+        await signup(email, password, confirmPassword)
     }
-    
-
-   
 
     return (
         <div className='form-container'>
@@ -62,9 +43,10 @@ function SignInForm() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                <button className='submit-button' type='submit'>Sign Up</button>
+                <button disabled={isLoading} className='submit-button' type='submit'>Sign Up</button>
+                { error && <p>{error}</p>}
             </form>
-            { error && <p>{error}</p>}
+            
         </div>
     )
 }
