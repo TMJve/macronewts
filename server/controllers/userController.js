@@ -83,11 +83,13 @@ const updateUser = async (req, res) =>{
 const signUpUser = async(req, res) => {
     const {email, password} = req.body;
 
-
     try{
         const user = await User.signup(email, password)
 
-        res.status(200).json({email, user})
+        //Create Token
+        const token = createToken(user._id)
+
+        res.status(200).json({email, token})
     } catch(error){
         res.status(400).json({error: error.message})
     }
@@ -96,12 +98,16 @@ const signUpUser = async(req, res) => {
 const logInUser = async(req, res) => {
     const {email, password} = req.body;
 
-    const user = await User.findOne({email});
+    try{
+        const user = await User.login(email, password)
 
-    if (!user || !user.comparePassword(password)) {
-        return res.status(401).json({ success: false, message: 'Invalid credentials' });
+        //Create Token
+        const token = createToken(user._id)
+
+        res.status(200).json({email, token})
+    } catch(error){
+        res.status(400).json({error: error.message})
     }
-    res.status(200).json({ success: true, token });
 }
 
 
