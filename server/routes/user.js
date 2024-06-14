@@ -1,11 +1,13 @@
 const express = require('express')
+
 const {
     createUser,
     getUsers,
     getUser,
     deleteUser,
     updateUser,
-    signUpUser
+    signUpUser,
+    logInUser
 } = require("../controllers/userController")
 
 const router = express.Router()
@@ -28,4 +30,6 @@ router.patch('/:id', updateUser)
 //Sign Up Section
 router.post('/signup', signUpUser)
 
+//Login Section
+router.post('/login', logInUser)
 module.exports = router

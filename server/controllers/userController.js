@@ -1,5 +1,10 @@
 const User = require("../models/userModel")
 const mongoose = require('mongoose')
+const jwt = require('jsonwebtoken')
+
+const createToken = (_id) => {
+    return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'})
+}
 
 // GET all user
 const getUsers = async (req, res) => {
@@ -85,12 +90,28 @@ const signUpUser = async(req, res) => {
 
     try {
         const user = await User.create({email, password});
+
+        // Create token
+        const token = createToken(user._id)
+
         console.log('User created successfully', user);
-        res.status(201).json(user);
+        res.status(200).json({email, token});
     }catch(err) {
         res.status(400).json({error: err.message});
     }
+
 };
+
+const logInUser = async(req, res) => {
+    const {email, password} = req.body;
+
+    const user = await User.findOne({email});
+
+    if (!user || !user.comparePassword(password)) {
+        return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+    res.status(200).json({ success: true, token });
+}
 
 
 
@@ -101,5 +122,6 @@ module.exports = {
     createUser,
     deleteUser,
     updateUser,
-    signUpUser
+    signUpUser,
+    logInUser
 }

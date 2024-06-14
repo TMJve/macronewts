@@ -2,7 +2,7 @@ import LoginForm from "./LoginForm";
 function RightPanel() {
     return (
         <div className="right-panel">
-           <LoginForm />
+            <LoginForm />
         </div>
 
     )
