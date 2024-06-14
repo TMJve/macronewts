@@ -3,7 +3,9 @@ import defaultProfile from "../photos/default-profile.jpg";
 import ProfilePicture from "../components/profilePicture";
 import { useState } from "react";
 
+
 function EditProfile(){
+    
     const [profilePicture, setProfilePicture] = useState(defaultProfile);
     const [name, setName] = useState('name');
     const [description, setDescription] = useState('Description');
@@ -26,6 +28,9 @@ function EditProfile(){
         // formData.append('name', name);
         // formData.append('description', description);
     }
+
+    // For logging out
+
 
     return(
         <>

@@ -20,7 +20,11 @@ export default function PageNav({onAddPost}) {
         </li>
         <li className='nav-item'>
           <button className='nav-link addButton' onClick={onAddPost}><a href='#'>+</a></button>
-          
+        </li>
+        <li className='nav-item'>
+          <Link className='nav-link' to='/Profile'>
+            <button className='nav-link addButton profilePicture'><a href='#'></a></button> 
+          </Link>
         </li>
       </ul>
     </nav>

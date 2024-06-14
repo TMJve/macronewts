@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 import defaultProfile from "../photos/default-profile.jpg";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { useLogout } from "../hooks/useLogout";
 
 function Profile() {
+    const { logout } = useLogout()
+    const handleClick = () => {
+        logout()
+    }
     const [users, setUsers] = useState(null)
 
     useEffect(() => {
@@ -60,7 +65,7 @@ function Profile() {
                         
                     </div>
                     <div>
-
+                        <button className='nav-link logoutButton' onClick={handleClick}>Log out</button>
                     </div>
                 </div>
             </div>

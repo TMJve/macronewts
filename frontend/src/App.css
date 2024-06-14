@@ -205,6 +205,15 @@ hr {
 
 }
 
+.logoutButton{
+  background-color: #ee5b73;
+  border-color: #e94560;
+  color: rgb(41, 41, 41);
+  width: 80px;
+  height: 40px;
+  font-size: 15px;
+}
+
 .addButton a {
   color: white;
   text-decoration: none;
@@ -923,4 +932,8 @@ div.arrow {
 
 .post-button:hover {
   background-color: #d83f57;
+}
+
+.profilePicture{
+  background-image: url("\\photos\\default-profile.jpg");
 }
