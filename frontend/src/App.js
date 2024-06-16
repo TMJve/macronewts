@@ -8,6 +8,8 @@ import PageNotFound from './pages/PageNotFound';
 import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
 import RecipePage from './pages/RecipePage';
+import AddRecipe from './pages/AddRecipe';
+
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path='editprofile' element={<EditProfile/>}/>
         <Route path='*' element={<PageNotFound />}/>
         <Route path='menurecipe' element={<RecipePage />}/>
+        <Route path='addrecipe' element={<AddRecipe />}/>
+
 
       </Routes>
     </BrowserRouter>
