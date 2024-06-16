@@ -31,7 +31,7 @@ const Modal = ({ show, onClose, onSubmit }) => {
               placeholder="Share your experience..." 
             ></textarea>
           </div>
-          <button className="post-button" type="submit">Submit</button>
+          <button className="post-button" type="submit">Post</button>
         </form>
       </div>
     </div>

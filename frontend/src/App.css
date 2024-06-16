@@ -912,6 +912,8 @@ div.arrow {
   right: 10px;
   cursor: pointer;
   transition: color 0.3s;
+  text-decoration: none;
+
 }
 
 .close-button:hover {
@@ -937,3 +939,52 @@ div.arrow {
 .profilePicture{
   background-image: url("\\photos\\default-profile.jpg");
 }
+
+
+/* Add Recipe CSS */
+
+.add-menu-btn {
+  text-decoration: none;
+  }
+  
+  .modal-content-recipe {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+  }
+  
+  .modal-content-recipe h2 {
+    color: #e94560;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content-recipe label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .modal-content-recipe .post-input-recipe {
+    width: calc(100% - 20px);
+    border: 1px solid #f87a8f;
+    padding: 10px;
+    resize: none; 
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .modal-content-recipe textarea {
+    height: 200px;
+  }
+  
+  .modal-content-recipe {
+    border-color: #e94560;
+  }
